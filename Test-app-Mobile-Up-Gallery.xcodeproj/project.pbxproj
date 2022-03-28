@@ -16,6 +16,9 @@
 		D258733B27F0BE33005893C1 /* Test_app_Mobile_Up_GalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258733A27F0BE33005893C1 /* Test_app_Mobile_Up_GalleryTests.swift */; };
 		D258734527F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258734427F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITests.swift */; };
 		D258734727F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258734627F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITestsLaunchTests.swift */; };
+		D26C115227F1195200900DCD /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D26C115127F1195200900DCD /* SF-Pro-Display-Bold.otf */; };
+		D26C115427F1197800900DCD /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D26C115327F1197800900DCD /* SF-Pro-Display-Medium.otf */; };
+		D26C115627F1199500900DCD /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D26C115527F1199500900DCD /* SF-Pro-Display-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D258734027F0BE33005893C1 /* Test-app-Mobile-Up-GalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test-app-Mobile-Up-GalleryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D258734427F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_app_Mobile_Up_GalleryUITests.swift; sourceTree = "<group>"; };
 		D258734627F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_app_Mobile_Up_GalleryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D26C115127F1195200900DCD /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		D26C115327F1197800900DCD /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		D26C115527F1199500900DCD /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		D258732227F0BE31005893C1 /* Test-app-Mobile-Up-Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				D258735427F110C6005893C1 /* Fonts */,
+				D258735327F0FB27005893C1 /* Pages */,
 				D258732327F0BE31005893C1 /* AppDelegate.swift */,
 				D258732527F0BE31005893C1 /* SceneDelegate.swift */,
 				D258732727F0BE31005893C1 /* ViewController.swift */,
@@ -125,6 +133,23 @@
 				D258734627F0BE33005893C1 /* Test_app_Mobile_Up_GalleryUITestsLaunchTests.swift */,
 			);
 			path = "Test-app-Mobile-Up-GalleryUITests";
+			sourceTree = "<group>";
+		};
+		D258735327F0FB27005893C1 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		D258735427F110C6005893C1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D26C115527F1199500900DCD /* SF-Pro-Display-Semibold.otf */,
+				D26C115327F1197800900DCD /* SF-Pro-Display-Medium.otf */,
+				D26C115127F1195200900DCD /* SF-Pro-Display-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +256,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26C115627F1199500900DCD /* SF-Pro-Display-Semibold.otf in Resources */,
+				D26C115427F1197800900DCD /* SF-Pro-Display-Medium.otf in Resources */,
 				D258733027F0BE33005893C1 /* LaunchScreen.storyboard in Resources */,
+				D26C115227F1195200900DCD /* SF-Pro-Display-Bold.otf in Resources */,
 				D258732D27F0BE33005893C1 /* Assets.xcassets in Resources */,
 				D258732B27F0BE31005893C1 /* Main.storyboard in Resources */,
 			);
