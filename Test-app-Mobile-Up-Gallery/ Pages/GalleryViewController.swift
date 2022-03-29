@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GalleryDisplayLogic: class {
+    func displayPhoto()
+}
+
 class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
