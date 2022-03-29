@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+protocol GalleryPresentationLogic {
+    func presentData()
+}
+
+class GalleryPresenter{
+    
+    // MARK: - External vars
+    weak var viewController: GalleryDisplayLogic?
+}
+
+//MARK: - Presentation logic
+extension GalleryPresenter: GalleryPresentationLogic{
+    func presentData(){
+        
+    }
+}
