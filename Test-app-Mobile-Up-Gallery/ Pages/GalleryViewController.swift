@@ -7,27 +7,46 @@
 
 import UIKit
 
-protocol GalleryDisplayLogic: class {
-    func displayPhoto()
+protocol GalleryDisplayLogic: AnyObject {
+    func displayPhotos()
 }
 
 class GalleryViewController: UIViewController {
+    
+    //MARK: - External vars
+    
+    //MARK: - Internal vars
+    private var interactor: GalleryBusinessLogic?
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: <#T##NSCoder#>)
+        setup()
+    }
+    
+    private func setup(){
+        let viewController = self
+        let presenter = GalleryPresenter()
+        let interactor = GalleryInteractor()
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        viewController.interactor = interactor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: 
+extension GalleryViewController: GalleryDisplayLogic{
+    func displayPhotos(){
+        //some actions
     }
-    */
-
 }
