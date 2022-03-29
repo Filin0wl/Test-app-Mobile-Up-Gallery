@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol GalleryBusinessLogic {
+    func fetchPhotos()
+}
+
+class GalleryInteractor{
+    
+    // MARK: - External vars
+    var presenter: GalleryPresentationLogic?
+}
+
+// MARK: - Bussiness logic
+extension GalleryInteractor: GalleryBusinessLogic{
+    func fetchPhotos() {
+        presenter?.presentData()
+        <#code#>//some action
+    }
+}
