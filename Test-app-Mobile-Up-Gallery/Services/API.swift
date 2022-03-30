@@ -14,4 +14,10 @@ struct API
     static let version = "5.131"
     
     static let photo = "/method/photos.get"
+    
+    static let idOwner = "-128666765"
+    static let idAlbum = "266276915"
+    
+    static let idOwnerParameter = "owner_id"
+    static let idAlbumParameter = "album_id"
 }
