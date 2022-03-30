@@ -184,12 +184,8 @@
 		D27A7E4F27F22EB800129F4B /*  Pages */ = {
 			isa = PBXGroup;
 			children = (
-				D27A7E5727F3021B00129F4B /* GalleryViewController.swift */,
-				D27A7E5E27F304B700129F4B /* GalleryPresenter.swift */,
-				D27A7E6027F3068800129F4B /* GalleryInteractor.swift */,
-				D27BB94D27F467B200B411B8 /* LoginViewController.swift */,
-				D27BB94E27F467B200B411B8 /* LoginViewController.xib */,
-				D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */,
+				D27BB95427F491E700B411B8 /* Login */,
+				D27BB95527F4920400B411B8 /* Gallery */,
 			);
 			path = " Pages";
 			sourceTree = "<group>";
@@ -210,6 +206,26 @@
 				D27BB93A27F3678800B411B8 /* AuthService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D27BB95427F491E700B411B8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D27BB94D27F467B200B411B8 /* LoginViewController.swift */,
+				D27BB94E27F467B200B411B8 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D27BB95527F4920400B411B8 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */,
+				D27A7E5727F3021B00129F4B /* GalleryViewController.swift */,
+				D27A7E5E27F304B700129F4B /* GalleryPresenter.swift */,
+				D27A7E6027F3068800129F4B /* GalleryInteractor.swift */,
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
