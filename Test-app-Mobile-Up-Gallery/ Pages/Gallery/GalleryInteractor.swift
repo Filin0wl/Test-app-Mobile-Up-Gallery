@@ -21,6 +21,6 @@ class GalleryInteractor{
 extension GalleryInteractor: GalleryBusinessLogic{
     func fetchPhotos() {
         presenter?.presentData()
-        <#code#>//some action
+        //some action
     }
 }

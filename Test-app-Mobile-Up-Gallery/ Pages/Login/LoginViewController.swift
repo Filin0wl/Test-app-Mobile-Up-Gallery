@@ -13,14 +13,19 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
+    //MARK: - Fields
+    private var authService: AuthService!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         headerLabel.text = "Mobile Up\nGallery"
         loginButton.layer.cornerRadius = 8
+        authService = SceneDelegate.shared().authService
     }
 
     //MARK: - Actions
     @IBAction func logInTouch(_ sender: Any) {
+        authService.wakeUpSession()
     }
 }

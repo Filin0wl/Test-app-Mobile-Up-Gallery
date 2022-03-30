@@ -24,7 +24,7 @@ class GalleryViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: <#T##NSCoder#>)
+        super.init(coder: coder)
         setup()
     }
     
@@ -44,7 +44,7 @@ class GalleryViewController: UIViewController {
     }
 }
 
-//MARK: 
+//MARK: - Extension
 extension GalleryViewController: GalleryDisplayLogic{
     func displayPhotos(){
         //some actions
