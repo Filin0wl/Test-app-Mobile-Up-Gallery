@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Test_app_Mobile_Up_Gallery" customModuleProvider="target">
+            <connections>
+                <outlet property="headerLabel" destination="H24-2L-GIW" id="oQs-Lz-7me"/>
+                <outlet property="loginButton" destination="kep-Cf-JbR" id="Soi-Xh-LRo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H24-2L-GIW">
+                    <rect key="frame" x="24" y="164" width="366" height="57.5"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="48"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kep-Cf-JbR">
+                    <rect key="frame" x="24" y="790" width="366" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="NyA-cT-fg8"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Вход через VK">
+                        <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
+                        <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="logInTouch:" destination="-1" eventType="touchUpInside" id="Bb0-Ce-szx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="kep-Cf-JbR" secondAttribute="bottom" constant="50" id="DSV-Kf-U1k"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H24-2L-GIW" secondAttribute="trailing" constant="24" id="PuZ-nh-FpC"/>
+                <constraint firstItem="H24-2L-GIW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="164" id="Ysf-dr-a4O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kep-Cf-JbR" secondAttribute="trailing" constant="24" id="ekf-c9-uGa"/>
+                <constraint firstItem="kep-Cf-JbR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="ezu-8n-hit"/>
+                <constraint firstItem="H24-2L-GIW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="nNg-rG-Zq6"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
