@@ -34,6 +34,6 @@ final class NetworkService{
         components.path = path
         components.queryItems = params.map{ URLQueryItem(name: $0, value: $1) }
         
-        return url = components.url!
+        return components.url!
     }
 }
