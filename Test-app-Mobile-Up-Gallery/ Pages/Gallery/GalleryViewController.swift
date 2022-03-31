@@ -9,21 +9,22 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
+    private let networkService: Networking = NetworkService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let params = [API.idOwnerParameter: API.idOwner, API.idAlbumParameter: API.idAlbum]
+        networkService.request(path: API.photo, params: params) {(data, error) in
+            if let error = error {
+                print("Error received requesting data: \(error.localizedDescription)")
+            }
+            guard let data = data else { return }
+            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+            print ("json: \(String(describing: json))")
+            }
+        
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
