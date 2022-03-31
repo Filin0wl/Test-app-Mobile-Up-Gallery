@@ -11,23 +11,9 @@ protocol GalleryDisplayLogic: AnyObject {
   func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData)
 }
 
-class GalleryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GalleryDisplayLogic {
-
-    
-    private func setupCollectionView() {
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
-        collectionView?.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
-        view.addSubview(collectionView)
-        collectionView?.translatesAutoresizingMaskIntoConstraints = false
-        collectionView?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        collectionView?.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        collectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        collectionView?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-    }
+class GalleryViewController: UIViewController, GalleryDisplayLogic {
     
     //MARK: - Outlets
-
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -39,7 +25,6 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     //MARK: - Internal fileds
     private let networkService: Networking = NetworkService()
     private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
-    
     
     
     // MARK: Object lifecycle
@@ -92,14 +77,6 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
         
     }
     
-    func setupView() {
-        self.setupTopBar()
-     //   collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
-      //  collectionView.delegate = self
-       // collectionView.dataSource = self
-        //view.addSubview(collectionView)
-    }
-    
     func setupTopBar() {
         self.navigationItem.title = "Mobile Up Gallery"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "SF Pro Display Semibold", size: 17)!]
@@ -114,6 +91,29 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     @objc func logoutButton(){
         //some code for logout
     }
+    
+    private func setupCollectionView() {
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
+        view.addSubview(collectionView)
+        collectionView?.translatesAutoresizingMaskIntoConstraints = false
+        collectionView?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        collectionView?.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        collectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        collectionView?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData) {
+
+    }
+    
+
+}
+
+
+//MARK: - Extension
+extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -135,10 +135,4 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1.5
     }
-    
-    func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData) {
-
-    }
-    
-
 }
