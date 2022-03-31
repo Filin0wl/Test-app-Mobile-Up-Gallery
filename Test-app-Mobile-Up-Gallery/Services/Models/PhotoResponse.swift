@@ -12,13 +12,11 @@ struct PhotoResponse: Decodable {
 }
 
 struct PhotoItem: Decodable {
-    let sourseId: Int
     let albumId: Int
     let ownerId: Int
     let userId: Int
-    let text: String
     let date: Int
-    let size: [PhotoSize]
+    let sizes: [PhotoSize]
     
 }
 
