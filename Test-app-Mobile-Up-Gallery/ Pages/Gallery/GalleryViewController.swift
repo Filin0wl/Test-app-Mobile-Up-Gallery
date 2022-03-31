@@ -11,21 +11,36 @@ protocol GalleryDisplayLogic: AnyObject {
   func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData)
 }
 
-class GalleryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GalleryDisplayLogic {
+class GalleryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, GalleryDisplayLogic {
+
     
-    //MAKR: - Outlets
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    private func setupCollectionView() {
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
+        view.addSubview(collectionView)
+        collectionView?.translatesAutoresizingMaskIntoConstraints = false
+        collectionView?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        collectionView?.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        collectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        collectionView?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    //MARK: - Outlets
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     //MARK: - External fileds
     var interactor: GalleryBusinessLogic?
     var router: (NSObjectProtocol & GalleryRoutingLogic)?
     
+    
     //MARK: - Internal fileds
     private let networkService: Networking = NetworkService()
     private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    
     
     // MARK: Object lifecycle
     
@@ -62,7 +77,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupView()
+        
         view.backgroundColor = .blue
         fetcher.getGetPhotoFromAlbum { (photoResponse) in
             guard let photoResponse = photoResponse else { return }
@@ -72,16 +87,17 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
             
 
         }
-        self.setupView()
+        self.setupTopBar()
+        self.setupCollectionView()
         
     }
     
     func setupView() {
         self.setupTopBar()
-        collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        view.addSubview(collectionView)
+     //   collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+      //  collectionView.delegate = self
+       // collectionView.dataSource = self
+        //view.addSubview(collectionView)
     }
     
     func setupTopBar() {
@@ -99,19 +115,19 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
         //some code for logout
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCollectionViewCell
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.bounds.width, height: 400)
+    }
+  
     
     func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData) {
 
