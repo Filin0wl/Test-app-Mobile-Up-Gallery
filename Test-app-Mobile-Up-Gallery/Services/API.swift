@@ -20,4 +20,7 @@ struct API
     
     static let idOwnerParameter = "owner_id"
     static let idAlbumParameter = "album_id"
+    
+    static let accessTokenParameter = "access_token"
+    static let versionParameter = "v"
 }
