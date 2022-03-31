@@ -257,6 +257,7 @@
 		D27BB95C27F5AD2000B411B8 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				D282519C27F65C0A00FF80E3 /* PhotoCell */,
 				D282518627F645B600FF80E3 /* GalleryViewController.xib */,
 				D282518527F645B600FF80E3 /* GalleryViewController.swift */,
 				D27BB96D27F5F77A00B411B8 /* GalleryInteractor.swift */,
@@ -264,8 +265,6 @@
 				D27BB96B27F5F77A00B411B8 /* GalleryModels.swift */,
 				D27BB96927F5F77A00B411B8 /* GalleryWorker.swift */,
 				D27BB96A27F5F77A00B411B8 /* GalleryRouter.swift */,
-				D282517B27F6370C00FF80E3 /* PhotoCollectionViewCell.swift */,
-				D282517C27F6370C00FF80E3 /* PhotoCollectionViewCell.xib */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -290,6 +289,15 @@
 				D282518F27F654EC00FF80E3 /* ExpandedPhotoInteractor.swift */,
 			);
 			path = "Expanded photo ";
+			sourceTree = "<group>";
+		};
+		D282519C27F65C0A00FF80E3 /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				D282517C27F6370C00FF80E3 /* PhotoCollectionViewCell.xib */,
+				D282517B27F6370C00FF80E3 /* PhotoCollectionViewCell.swift */,
+			);
+			path = PhotoCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
