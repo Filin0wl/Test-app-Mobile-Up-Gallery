@@ -89,10 +89,14 @@ class GalleryViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "SF Pro Display Semibold", size: 17)!]
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "SF Pro Display Medium", size: 18)!], for: UIControl.State.normal)
-        let loginButton = UIBarButtonItem(title: NSLocalizedString("Выход", comment: "Выход"), style: .plain, target: self, action: nil)
+        let loginButton = UIBarButtonItem(title: NSLocalizedString("Выход", comment: "Выход"), style: .plain, target: self, action: #selector(logoutButton))
         loginButton.tintColor = .black
         
         self.navigationItem.rightBarButtonItem = loginButton
+    }
+    
+    @objc func logoutButton(){
+        //some code for logout
     }
     
     override func viewDidLayoutSubviews() {
