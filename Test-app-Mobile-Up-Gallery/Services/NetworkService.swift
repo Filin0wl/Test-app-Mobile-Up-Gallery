@@ -7,12 +7,34 @@
 
 import Foundation
 
-final class NetworkService{
+protocol Networking {
+    func request(path: String, params: [String: String], complition: @escaping (Data?, Error?) -> Void)
+}
+
+final class NetworkService: Networking {
     
     private let authService: AuthService
     
     init(authService: AuthService = SceneDelegate.shared().authService){
         self.authService = authService
+    }
+    
+    func request(path: String, params: [String : String], complition: @escaping (Data?, Error?) -> Void) {
+        guard let token = authService.token else { return }
+        var allParams = params
+        allParams[API.accessTokenParameter] = token
+        allParams[API.versionParameter] = API.version
+        let url = self.url(from: API.photo, params: allParams)
+        let session = URLSession.init(configuration: .default)
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                complition(data, error)
+            }
+        }
+        task.resume()
+        print(url)
+        
     }
     
     func getPhoto() {

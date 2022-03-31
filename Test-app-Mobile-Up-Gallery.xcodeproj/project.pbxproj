@@ -28,6 +28,8 @@
 		D27BB95927F494ED00B411B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95827F494ED00B411B8 /* API.swift */; };
 		D27BB95F27F5AD3D00B411B8 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95D27F5AD3D00B411B8 /* GalleryViewController.swift */; };
 		D27BB96027F5AD3D00B411B8 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27BB95E27F5AD3D00B411B8 /* GalleryViewController.xib */; };
+		D27BB96327F5DE5800B411B8 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB96227F5DE5800B411B8 /* PhotoResponse.swift */; };
+		D27BB96527F5EE5D00B411B8 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB96427F5EE5D00B411B8 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		D27BB95827F494ED00B411B8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D27BB95D27F5AD3D00B411B8 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D27BB95E27F5AD3D00B411B8 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
+		D27BB96227F5DE5800B411B8 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
+		D27BB96427F5EE5D00B411B8 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,9 +207,11 @@
 		D27BB93927F3675600B411B8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D27BB96127F5DB5900B411B8 /* Models */,
 				D27BB93A27F3678800B411B8 /* AuthService.swift */,
 				D27BB95627F493F300B411B8 /* NetworkService.swift */,
 				D27BB95827F494ED00B411B8 /* API.swift */,
+				D27BB96427F5EE5D00B411B8 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -226,6 +232,14 @@
 				D27BB95E27F5AD3D00B411B8 /* GalleryViewController.xib */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		D27BB96127F5DB5900B411B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D27BB96227F5DE5800B411B8 /* PhotoResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,9 +402,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27BB96327F5DE5800B411B8 /* PhotoResponse.swift in Sources */,
 				D27BB95F27F5AD3D00B411B8 /* GalleryViewController.swift in Sources */,
 				D27BB94F27F467B200B411B8 /* LoginViewController.swift in Sources */,
 				D258732827F0BE31005893C1 /* ViewController.swift in Sources */,
+				D27BB96527F5EE5D00B411B8 /* NetworkDataFetcher.swift in Sources */,
 				D27BB95727F493F300B411B8 /* NetworkService.swift in Sources */,
 				D258732427F0BE31005893C1 /* AppDelegate.swift in Sources */,
 				D258732627F0BE31005893C1 /* SceneDelegate.swift in Sources */,
