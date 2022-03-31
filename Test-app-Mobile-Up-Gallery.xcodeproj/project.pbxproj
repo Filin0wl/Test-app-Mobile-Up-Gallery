@@ -28,6 +28,8 @@
 		D27BB94F27F467B200B411B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB94D27F467B200B411B8 /* LoginViewController.swift */; };
 		D27BB95027F467B200B411B8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27BB94E27F467B200B411B8 /* LoginViewController.xib */; };
 		D27BB95227F46B2D00B411B8 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */; };
+		D27BB95727F493F300B411B8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95627F493F300B411B8 /* NetworkService.swift */; };
+		D27BB95927F494ED00B411B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95827F494ED00B411B8 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		D27BB94D27F467B200B411B8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D27BB94E27F467B200B411B8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
+		D27BB95627F493F300B411B8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D27BB95827F494ED00B411B8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				D27BB93A27F3678800B411B8 /* AuthService.swift */,
+				D27BB95627F493F300B411B8 /* NetworkService.swift */,
+				D27BB95827F494ED00B411B8 /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -392,9 +398,11 @@
 				D258732827F0BE31005893C1 /* ViewController.swift in Sources */,
 				D27A7E5F27F304B700129F4B /* GalleryPresenter.swift in Sources */,
 				D27A7E5927F3021B00129F4B /* GalleryViewController.swift in Sources */,
+				D27BB95727F493F300B411B8 /* NetworkService.swift in Sources */,
 				D258732427F0BE31005893C1 /* AppDelegate.swift in Sources */,
 				D258732627F0BE31005893C1 /* SceneDelegate.swift in Sources */,
 				D27A7E6127F3068800129F4B /* GalleryInteractor.swift in Sources */,
+				D27BB95927F494ED00B411B8 /* API.swift in Sources */,
 				D27BB93B27F3678800B411B8 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
