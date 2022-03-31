@@ -67,7 +67,7 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
         
         let backButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backButton))
         backButton.image = backIcon
-        self.navigationItem.rightBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem = backButton
     }
     
     @objc func shareButton(){
