@@ -7,14 +7,16 @@
 
 import Foundation
 
+struct PhotoResponseWrapper: Decodable {
+    let response: PhotoResponse
+}
+
 struct PhotoResponse: Decodable {
     var items: [PhotoItem]
 }
 
 struct PhotoItem: Decodable {
-    let albumId: Int
-    let ownerId: Int
-    let userId: Int
+    let id: Int
     let date: Int
     let sizes: [PhotoSize]
     
@@ -24,5 +26,5 @@ struct PhotoSize: Decodable {
     let type: String
     let url: String
     let width: Int
-    let heigth: Int
+    let height: Int
 }
