@@ -8,10 +8,16 @@
 import UIKit
 import VKSdkFramework
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
 
     var window: UIWindow?
     var authService: AuthService!
+    
+    static func shared() -> SceneDelegate {
+        let scene = UIApplication.shared.connectedScenes.first
+        let sd: SceneDelegate = ((scene?.delegate as? SceneDelegate)!)
+        return sd
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         authService = AuthService()
+        authService.delegate = self
         let authVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
@@ -60,6 +67,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    
+    //MARK: - AuthServiceDelegate
+    
+    func authServiceShouldShow(viewController: UIViewController) {
+        print(#function)
+        viewController.isModalInPresentation = true
+        viewController.modalPresentationStyle = .formSheet
+        window?.rootViewController?.present(viewController, animated: true, completion: nil)
+    }
+    
+    func authServiceSignIn() {
+        print(#function)
+        let galleryVC = GalleryViewController(nibName: "GalleryViewController", bundle: nil)
+        let navVC = UINavigationController(rootViewController: galleryVC)
+        window?.rootViewController = navVC
+    }
+    
+    func authServiceSignInFailed() {
+        print(#function)
+    }
+    
 
 }
 
