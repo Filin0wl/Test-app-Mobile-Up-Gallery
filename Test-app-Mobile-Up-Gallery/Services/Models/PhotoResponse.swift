@@ -28,3 +28,11 @@ struct PhotoSize: Decodable {
     let width: Int
     let height: Int
 }
+
+struct PhotoViewModel {
+    struct Cell: PhotoCellViewModel {
+        var photoUrlString: String
+        var date: Double
+    }
+    var cells: [Cell]
+}
