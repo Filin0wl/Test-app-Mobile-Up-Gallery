@@ -14,7 +14,7 @@ protocol GalleryPresentationLogic {
 class GalleryPresenter{
     
     // MARK: - External vars
-    weak var viewController: GalleryDisplayLogic?
+  //  weak var viewController: GalleryDisplayLogic?
 }
 
 //MARK: - Presentation logic
