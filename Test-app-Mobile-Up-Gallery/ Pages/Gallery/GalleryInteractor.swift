@@ -21,6 +21,11 @@ class GalleryInteractor: GalleryBusinessLogic {
     if service == nil {
       service = GalleryService()
     }
+      
+      switch request {
+      case .getPhotos:
+          print("getPhotos interactor")
+          presenter?.presentData(response: .presentPhoto)
+      }
   }
-  
 }

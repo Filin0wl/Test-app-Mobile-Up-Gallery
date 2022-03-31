@@ -13,17 +13,17 @@ enum Gallery {
   enum Model {
     struct Request {
       enum RequestType {
-        case some
+        case getPhotos
       }
     }
     struct Response {
       enum ResponseType {
-        case some
+        case presentPhoto
       }
     }
     struct ViewModel {
       enum ViewModelData {
-        case some
+          case displayPhotos
       }
     }
   }

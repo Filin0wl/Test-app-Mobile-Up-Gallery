@@ -16,6 +16,11 @@ class GalleryPresenter: GalleryPresentationLogic {
   weak var viewController: GalleryDisplayLogic?
   
   func presentData(response: Gallery.Model.Response.ResponseType) {
+      switch response {
+      case .presentPhoto:
+          print("presentPhoto Presenter")
+          viewController?.displayData(viewModel: .displayPhotos)
+      }
   
   }
   

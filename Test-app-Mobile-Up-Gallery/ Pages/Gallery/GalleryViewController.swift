@@ -105,6 +105,10 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     }
     
     func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData) {
+        switch viewModel {
+        case .displayPhotos:
+            print("displayPhotos ViewController")
+        }
 
     }
     
@@ -134,5 +138,10 @@ extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1.5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("tap item")
+        interactor?.makeRequest(request: .getPhotos)
     }
 }
