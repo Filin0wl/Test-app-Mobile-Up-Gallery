@@ -19,17 +19,15 @@
 		D26C115227F1195200900DCD /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D26C115127F1195200900DCD /* SF-Pro-Display-Bold.otf */; };
 		D26C115427F1197800900DCD /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D26C115327F1197800900DCD /* SF-Pro-Display-Medium.otf */; };
 		D26C115627F1199500900DCD /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D26C115527F1199500900DCD /* SF-Pro-Display-Semibold.otf */; };
-		D27A7E5927F3021B00129F4B /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A7E5727F3021B00129F4B /* GalleryViewController.swift */; };
-		D27A7E5F27F304B700129F4B /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A7E5E27F304B700129F4B /* GalleryPresenter.swift */; };
-		D27A7E6127F3068800129F4B /* GalleryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A7E6027F3068800129F4B /* GalleryInteractor.swift */; };
 		D27BB93B27F3678800B411B8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB93A27F3678800B411B8 /* AuthService.swift */; };
 		D27BB94427F378FB00B411B8 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27BB94327F378FA00B411B8 /* VKSdkFramework.xcframework */; };
 		D27BB94527F378FB00B411B8 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D27BB94327F378FA00B411B8 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D27BB94F27F467B200B411B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB94D27F467B200B411B8 /* LoginViewController.swift */; };
 		D27BB95027F467B200B411B8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27BB94E27F467B200B411B8 /* LoginViewController.xib */; };
-		D27BB95227F46B2D00B411B8 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */; };
 		D27BB95727F493F300B411B8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95627F493F300B411B8 /* NetworkService.swift */; };
 		D27BB95927F494ED00B411B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95827F494ED00B411B8 /* API.swift */; };
+		D27BB95F27F5AD3D00B411B8 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27BB95D27F5AD3D00B411B8 /* GalleryViewController.swift */; };
+		D27BB96027F5AD3D00B411B8 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27BB95E27F5AD3D00B411B8 /* GalleryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,18 +78,16 @@
 		D26C115127F1195200900DCD /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		D26C115327F1197800900DCD /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		D26C115527F1199500900DCD /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
-		D27A7E5727F3021B00129F4B /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
-		D27A7E5E27F304B700129F4B /* GalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPresenter.swift; sourceTree = "<group>"; };
-		D27A7E6027F3068800129F4B /* GalleryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryInteractor.swift; sourceTree = "<group>"; };
 		D27A7E6A27F3476F00129F4B /* VKSdkFramework */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = VKSdkFramework; path = Carthage/Build/iOS/VKSdkFramework.framework/VKSdkFramework; sourceTree = "<group>"; };
 		D27A7E6E27F34B4500129F4B /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
 		D27BB93A27F3678800B411B8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D27BB94327F378FA00B411B8 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
 		D27BB94D27F467B200B411B8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D27BB94E27F467B200B411B8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
 		D27BB95627F493F300B411B8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D27BB95827F494ED00B411B8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D27BB95D27F5AD3D00B411B8 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		D27BB95E27F5AD3D00B411B8 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				D27BB95427F491E700B411B8 /* Login */,
-				D27BB95527F4920400B411B8 /* Gallery */,
+				D27BB95C27F5AD2000B411B8 /* Gallery */,
 			);
 			path = " Pages";
 			sourceTree = "<group>";
@@ -223,13 +219,11 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		D27BB95527F4920400B411B8 /* Gallery */ = {
+		D27BB95C27F5AD2000B411B8 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				D27BB95127F46B2D00B411B8 /* GalleryViewController.xib */,
-				D27A7E5727F3021B00129F4B /* GalleryViewController.swift */,
-				D27A7E5E27F304B700129F4B /* GalleryPresenter.swift */,
-				D27A7E6027F3068800129F4B /* GalleryInteractor.swift */,
+				D27BB95D27F5AD3D00B411B8 /* GalleryViewController.swift */,
+				D27BB95E27F5AD3D00B411B8 /* GalleryViewController.xib */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -341,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D26C115627F1199500900DCD /* SF-Pro-Display-Semibold.otf in Resources */,
-				D27BB95227F46B2D00B411B8 /* GalleryViewController.xib in Resources */,
+				D27BB96027F5AD3D00B411B8 /* GalleryViewController.xib in Resources */,
 				D26C115427F1197800900DCD /* SF-Pro-Display-Medium.otf in Resources */,
 				D258733027F0BE33005893C1 /* LaunchScreen.storyboard in Resources */,
 				D26C115227F1195200900DCD /* SF-Pro-Display-Bold.otf in Resources */,
@@ -394,14 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27BB95F27F5AD3D00B411B8 /* GalleryViewController.swift in Sources */,
 				D27BB94F27F467B200B411B8 /* LoginViewController.swift in Sources */,
 				D258732827F0BE31005893C1 /* ViewController.swift in Sources */,
-				D27A7E5F27F304B700129F4B /* GalleryPresenter.swift in Sources */,
-				D27A7E5927F3021B00129F4B /* GalleryViewController.swift in Sources */,
 				D27BB95727F493F300B411B8 /* NetworkService.swift in Sources */,
 				D258732427F0BE31005893C1 /* AppDelegate.swift in Sources */,
 				D258732627F0BE31005893C1 /* SceneDelegate.swift in Sources */,
-				D27A7E6127F3068800129F4B /* GalleryInteractor.swift in Sources */,
 				D27BB95927F494ED00B411B8 /* API.swift in Sources */,
 				D27BB93B27F3678800B411B8 /* AuthService.swift in Sources */,
 			);
