@@ -89,4 +89,9 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
         print(#function)
     }
+    
+    func logOut() {
+        VKSdk.forceLogout()
+        delegate?.authServiceLogout()
+    }
 }

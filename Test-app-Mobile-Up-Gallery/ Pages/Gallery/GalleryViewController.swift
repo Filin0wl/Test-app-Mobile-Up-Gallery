@@ -26,6 +26,7 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     private let networkService: Networking = NetworkService()
     private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     private var photoViewModel = PhotoViewModel.init(cells: [])
+    private var authService: AuthService!
     
     
     // MARK: Object lifecycle
@@ -64,20 +65,10 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        view.backgroundColor = .blue
-        fetcher.getGetPhotoFromAlbum { (photoResponse) in
-            guard let photoResponse = photoResponse else { return }
-            photoResponse.items.map({ (photoItem) in
-                print(photoItem.date)
-            })
-            
-
-        }
         self.setupTopBar()
         self.setupCollectionView()
         interactor?.makeRequest(request: .getPhotos)
-        
+        authService = SceneDelegate.shared().authService
     }
     
     func setupTopBar() {
@@ -92,7 +83,7 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     }
     
     @objc func logoutButton(){
-        //some code for logout
+        authService.logOut()
     }
     
     private func setupCollectionView() {
