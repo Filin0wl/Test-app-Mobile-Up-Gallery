@@ -9,7 +9,7 @@ import UIKit
 import VKSdkFramework
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
-
+   
     var window: UIWindow?
     var authService: AuthService!
     
@@ -28,9 +28,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
         window?.windowScene = windowScene
         authService = AuthService()
         authService.delegate = self
-        let authVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        
+        let authVC =  UIViewController()
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
+        
+        authService.checkSessionOnStart()
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -79,15 +82,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     
     func authServiceSignIn() {
         print(#function)
-        let galleryVC = GalleryViewController(nibName: "GalleryViewController", bundle: nil)
-        let navVC = UINavigationController(rootViewController: galleryVC)
-        window?.rootViewController = navVC
+        self.goToGalleryPage()
     }
     
     func authServiceSignInFailed() {
         print(#function)
     }
     
-
+    func authServiceLoginPage() {
+        self.goToLoginPage()
+        print(#function)
+    }
+    
+    func authServiceSecondPage() {
+        self.goToGalleryPage()
+    }
+    
+    func authServiceLogout() {
+        self.authService = AuthService()
+        authService.delegate = self
+        self.goToLoginPage()
+        print(#function)
+    }
+    
+    private func goToGalleryPage() {
+        let galleryVC = GalleryViewController(nibName: "GalleryViewController", bundle: nil)
+        let navVC = UINavigationController(rootViewController: galleryVC)
+        window?.rootViewController = navVC
+    }
+    
+    private func goToLoginPage() {
+        let authVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        window?.rootViewController = authVC
+    }
 }
 

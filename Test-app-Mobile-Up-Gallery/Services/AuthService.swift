@@ -12,6 +12,9 @@ protocol AuthServiceDelegate: AnyObject {
     func authServiceShouldShow(viewController: UIViewController)
     func authServiceSignIn()
     func authServiceSignInFailed()
+    func authServiceLoginPage()
+    func authServiceSecondPage()
+    func authServiceLogout()
 }
 
 class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
@@ -33,6 +36,20 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
         vkSDK.uiDelegate = self
     }
 
+    func checkSessionOnStart() {
+        let scope = ["offline"]
+        VKSdk.wakeUpSession(scope) { [delegate] (state, error) in
+            switch state {
+            case .authorized:
+                print("authorized")
+                delegate?.authServiceSecondPage()
+           default:
+                delegate?.authServiceLoginPage()
+                
+            }
+            
+        }
+    }
     
     func wakeUpSession(){
         let scope = ["offline"]
