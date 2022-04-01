@@ -18,7 +18,7 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
   var interactor: ExpandedPhotoBusinessLogic?
   var router: (NSObjectProtocol & ExpandedPhotoRoutingLogic)?
 
-    @IBOutlet weak var photoVIew: UIImageView!
+    @IBOutlet weak var photoView: UIImageView!
     
   // MARK: Object lifecycle
   
@@ -55,6 +55,7 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
   override func viewDidLoad() {
     super.viewDidLoad()
       self.setupTopBar()
+      self.getPhoto()
   }
     
     func setupTopBar() {
@@ -77,7 +78,7 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
     }
     
     @objc func shareButton(){
-            guard let image = photoVIew.image else {
+            guard let image = photoView.image else {
                 showAlert(title: "Ошибка", message: "Ошибка получения изображения")
                 return }
             let shareController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -94,6 +95,13 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
     @objc func backButton(){
         navigationController?.popViewController(animated: true)
     }
+    
+    private func getPhoto() {
+        guard let photoUrl = self.photoUrl else {
+            showAlert(title: "Ошибка", message: "Ошибка загрузки изображения")
+            return }
+        photoView.loadFromUrl(URLAddress: photoUrl)
+    }
 
 func showAlert(title: String, message: String){
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -106,4 +114,18 @@ func showAlert(title: String, message: String){
 
   }
   
+}
+
+extension UIImageView {
+    func loadFromUrl(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else { return }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                        self?.image = loadedImage
+                }
+            }
+        }
+    }
 }
