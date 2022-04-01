@@ -14,9 +14,12 @@ protocol ExpandedPhotoDisplayLogic: AnyObject {
 
 class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
 
+    var photoUrl: String?
   var interactor: ExpandedPhotoBusinessLogic?
   var router: (NSObjectProtocol & ExpandedPhotoRoutingLogic)?
 
+    @IBOutlet weak var photoVIew: UIImageView!
+    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -51,6 +54,7 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+      self.setupTopBar()
   }
     
     func setupTopBar() {

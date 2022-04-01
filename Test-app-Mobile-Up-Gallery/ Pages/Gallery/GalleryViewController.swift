@@ -139,7 +139,12 @@ extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tap item")
-        //interactor?.makeRequest(request: .getPhotos)
+        let photoVC = ExpandedPhotoViewController()
+        
+        let cellViewModel = photoViewModel.cells[indexPath.row]
+        let url = cellViewModel.photoUrlString
+        photoVC.photoUrl = url
+        
+        navigationController?.pushViewController(photoVC, animated: true)
     }
 }
