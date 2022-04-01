@@ -30,7 +30,7 @@ class GalleryPresenter: GalleryPresentationLogic {
   }
     
     private func cellViewModel(from photoItem: PhotoItem) -> PhotoViewModel.Cell {
-        return PhotoViewModel.Cell.init(photoUrlString: photoItem.imageURL, date: photoItem.date)
+        return PhotoViewModel.Cell.init(photoUrlString: photoItem.imageURL, date: photoItem.getStaandartDate)
     }
   
 }

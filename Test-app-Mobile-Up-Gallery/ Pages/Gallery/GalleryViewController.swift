@@ -142,7 +142,9 @@ extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDe
         
         let cellViewModel = photoViewModel.cells[indexPath.row]
         let url = cellViewModel.photoUrlString
+        let date = cellViewModel.date
         photoVC.photoUrl = url
+        photoVC.date = date
         
         //galleryManager.dateFormatter(viewController: photoVC, cellViewModel: cellViewModel)
         

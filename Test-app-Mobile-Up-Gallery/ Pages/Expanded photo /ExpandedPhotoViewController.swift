@@ -15,6 +15,7 @@ protocol ExpandedPhotoDisplayLogic: AnyObject {
 class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
 
     var photoUrl: String?
+    var date: String?
   var interactor: ExpandedPhotoBusinessLogic?
   var router: (NSObjectProtocol & ExpandedPhotoRoutingLogic)?
 
@@ -63,7 +64,7 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
         let shareIcon = UIImage(named: "ShareIcon")
         let backIcon = UIImage(named: "BackIcon")
         
-        self.navigationItem.title = "data"
+        self.navigationItem.title = self.date
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "SF Pro Display Semibold", size: 18)!]
         
         let shareButton = UIBarButtonItem(title: "Share", style: .done, target: self, action: #selector(shareButton))

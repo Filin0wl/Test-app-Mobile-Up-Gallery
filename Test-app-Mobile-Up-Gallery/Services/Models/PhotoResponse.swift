@@ -45,6 +45,15 @@ struct PhotoItem: Decodable {
     var imageURL: String {
         return getPropperSize().url
     }
+    
+    var getStaandartDate: String {
+        let date = self.date
+        let currentDate = Date(timeIntervalSince1970: TimeInterval(date))
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: NSLocalizedString("ru_RU", comment: "ru_RU"))
+        dateFormatter.dateFormat = "d MMMM YYYY"
+        return dateFormatter.string(from: currentDate)
+    }
 }
 
 struct PhotoSize: Decodable {

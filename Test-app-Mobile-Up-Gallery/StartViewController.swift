@@ -1,19 +1,18 @@
 //
-//  ViewController.swift
+//  StartViewController.swift
 //  Test-app-Mobile-Up-Gallery
 //
-//  Created by Анастасия Перминова on 27.03.2022.
+//  Created by Анастасия Перминова on 01.04.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
+    
 }
-

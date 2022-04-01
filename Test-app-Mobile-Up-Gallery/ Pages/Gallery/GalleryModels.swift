@@ -34,7 +34,7 @@ enum Gallery {
 struct PhotoViewModel {
     struct Cell: PhotoCellViewModel {
         var photoUrlString: String
-        var date: Int
+        var date: String
     }
     var cells: [Cell]
 }
