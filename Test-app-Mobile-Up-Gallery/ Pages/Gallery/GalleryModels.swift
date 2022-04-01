@@ -16,16 +16,25 @@ enum Gallery {
         case getPhotos
       }
     }
+      
     struct Response {
       enum ResponseType {
-        case presentPhoto
+          case presentPhoto(photo: PhotoResponse)
       }
     }
+      
     struct ViewModel {
       enum ViewModelData {
-          case displayPhotos
+          case displayPhotos(photoViewModel: PhotoViewModel)
       }
     }
   }
-  
+}
+
+struct PhotoViewModel {
+    struct Cell: PhotoCellViewModel {
+        var photoUrlString: String
+        var date: Int
+    }
+    var cells: [Cell]
 }

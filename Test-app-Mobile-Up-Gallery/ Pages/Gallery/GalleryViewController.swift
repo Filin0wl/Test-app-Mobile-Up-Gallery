@@ -25,6 +25,7 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     //MARK: - Internal fileds
     private let networkService: Networking = NetworkService()
     private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
+    private var photoViewModel = PhotoViewModel.init(cells: [])
     
     
     // MARK: Object lifecycle
@@ -62,6 +63,7 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         
         view.backgroundColor = .blue
         fetcher.getGetPhotoFromAlbum { (photoResponse) in
@@ -74,6 +76,7 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
         }
         self.setupTopBar()
         self.setupCollectionView()
+        interactor?.makeRequest(request: .getPhotos)
         
     }
     
@@ -106,8 +109,10 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
     
     func displayData(viewModel: Gallery.Model.ViewModel.ViewModelData) {
         switch viewModel {
-        case .displayPhotos:
-            print("displayPhotos ViewController")
+        case .displayPhotos(photoViewModel: let photoViewModel):
+            self.photoViewModel = photoViewModel
+            collectionView.reloadData()
+            print("something")
         }
 
     }
@@ -120,11 +125,13 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
 extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return photoViewModel.cells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCollectionViewCell
+        let cellViewModel = photoViewModel.cells[indexPath.row]
+        cell.set(viewModel: cellViewModel)
         return cell
     }
     
@@ -142,6 +149,6 @@ extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("tap item")
-        interactor?.makeRequest(request: .getPhotos)
+        //interactor?.makeRequest(request: .getPhotos)
     }
 }

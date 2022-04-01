@@ -22,16 +22,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func set(viewModel: PhotoCellViewModel){
-        //imageView.setImageUrl
+        imageView.loadFrom(URLAddress: viewModel.photoUrlString)
     }
 
 }
 
 extension UIImageView {
     func loadFrom(URLAddress: String) {
-        guard let url = URL(string: URLAddress) else {
-            return
-        }
+        guard let url = URL(string: URLAddress) else { return }
         
         DispatchQueue.main.async { [weak self] in
             if let imageData = try? Data(contentsOf: url) {

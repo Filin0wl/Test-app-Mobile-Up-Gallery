@@ -17,11 +17,20 @@ class GalleryPresenter: GalleryPresentationLogic {
   
   func presentData(response: Gallery.Model.Response.ResponseType) {
       switch response {
-      case .presentPhoto:
-          print("presentPhoto Presenter")
-          viewController?.displayData(viewModel: .displayPhotos)
+      case .presentPhoto(photo: let photo):
+          
+          let cells = photo.items.map{ (photoItem) in
+              cellViewModel(from: photoItem)
+          }
+          
+          let photoVIewModel = PhotoViewModel.init(cells: cells)
+          viewController?.displayData(viewModel: .displayPhotos(photoViewModel: photoVIewModel))
       }
   
   }
+    
+    private func cellViewModel(from photoItem: PhotoItem) -> PhotoViewModel.Cell {
+        return PhotoViewModel.Cell.init(photoUrlString: photoItem.imageURL, date: photoItem.date)
+    }
   
 }

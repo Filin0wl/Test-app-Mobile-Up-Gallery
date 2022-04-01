@@ -16,6 +16,8 @@ class GalleryInteractor: GalleryBusinessLogic {
 
   var presenter: GalleryPresentationLogic?
   var service: GalleryService?
+    
+  private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
   
   func makeRequest(request: Gallery.Model.Request.RequestType) {
     if service == nil {
@@ -25,7 +27,12 @@ class GalleryInteractor: GalleryBusinessLogic {
       switch request {
       case .getPhotos:
           print("getPhotos interactor")
-          presenter?.presentData(response: .presentPhoto)
+          fetcher.getGetPhotoFromAlbum { [weak self] (photoResponse) in
+              guard let photoResponse = photoResponse else { return }
+              self?.presenter?.presentData(response: .presentPhoto(photo: photoResponse))
+
+              
+          }
       }
   }
 }

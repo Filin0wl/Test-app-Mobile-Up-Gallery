@@ -20,19 +20,37 @@ struct PhotoItem: Decodable {
     let date: Int
     let sizes: [PhotoSize]
     
+    private func getPropperSize() -> PhotoSize{
+        if let sizeX = sizes.first(where: { $0.type == "x"}) {
+            return sizeX
+        } else if let fallBackSize = sizes.last {
+            return fallBackSize
+        } else {
+            return PhotoSize(url:"wrong image", type: "wrong images", height: 0, width: 0 )
+        }
+    }
+    
+    var height: Int {
+        return getPropperSize().height
+    }
+    
+    var width: Int {
+        return getPropperSize().width
+    }
+    
+    var type: String {
+        return getPropperSize().type
+    }
+    
+    var imageURL: String {
+        return getPropperSize().url
+    }
 }
 
 struct PhotoSize: Decodable {
-    let type: String
     let url: String
-    let width: Int
+    let type: String
     let height: Int
+    let width: Int
 }
 
-struct PhotoViewModel {
-    struct Cell: PhotoCellViewModel {
-        var photoUrlString: String
-        var date: Double
-    }
-    var cells: [Cell]
-}
