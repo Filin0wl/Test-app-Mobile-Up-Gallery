@@ -67,20 +67,40 @@ class ExpandedPhotoViewController: UIViewController, ExpandedPhotoDisplayLogic {
         
         let shareButton = UIBarButtonItem(title: "Share", style: .done, target: self, action: #selector(shareButton))
         shareButton.image = shareIcon
+        shareButton.tintColor = .black
         self.navigationItem.rightBarButtonItem = shareButton
         
         let backButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backButton))
         backButton.image = backIcon
+        backButton.tintColor = .black
         self.navigationItem.leftBarButtonItem = backButton
     }
     
     @objc func shareButton(){
-        //some code for share
-    }
+            guard let image = photoVIew.image else {
+                showAlert(title: "Ошибка", message: "Ошибка получения изображения")
+                return }
+            let shareController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            shareController.completionWithItemsHandler = {_, bool, _, error in
+                if bool {
+                    self.showAlert(title: "Сохранено!", message: "Изображение сохранено в ваши фотографии.")
+                } else if error != nil {
+                    self.showAlert(title: "Ошибка сохранения", message: "Изображение не сохранено")
+                }
+            }
+            present(shareController, animated: true, completion: nil)
+        }
     
     @objc func backButton(){
-        //some code for back
+        navigationController?.popViewController(animated: true)
     }
+
+func showAlert(title: String, message: String){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default)
+    alert.addAction(okAction)
+    present(alert, animated: true)
+}
   
   func displayData(viewModel: ExpandedPhoto.Model.ViewModel.ViewModelData) {
 

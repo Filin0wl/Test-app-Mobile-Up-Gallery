@@ -103,7 +103,6 @@ class GalleryViewController: UIViewController, GalleryDisplayLogic {
         case .displayPhotos(photoViewModel: let photoViewModel):
             self.photoViewModel = photoViewModel
             collectionView.reloadData()
-            print("something")
         }
 
     }
@@ -144,6 +143,10 @@ extension GalleryViewController:  UICollectionViewDataSource, UICollectionViewDe
         let cellViewModel = photoViewModel.cells[indexPath.row]
         let url = cellViewModel.photoUrlString
         photoVC.photoUrl = url
+        
+        //galleryManager.dateFormatter(viewController: photoVC, cellViewModel: cellViewModel)
+        
+        //galleryManager.backButton(navigationItem: self.navigationItem)
         
         navigationController?.pushViewController(photoVC, animated: true)
     }
